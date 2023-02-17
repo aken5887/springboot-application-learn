@@ -3,6 +3,7 @@ package com.study.springbootlearn;
 import com.study.springbootlearn.controller.GreetingController;
 import com.study.springbootlearn.service.GreetingService;
 import com.study.springbootlearn.service.GreetingServiceImpl;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.server.WebServer;
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
@@ -17,11 +18,13 @@ import org.springframework.web.servlet.DispatcherServlet;
 public class _3_SpringContainerApplication {
 
   @Bean
+  @ConditionalOnMissingBean
   GreetingController greetingController(GreetingService greetingService){
     return new GreetingController(greetingService);
   }
 
   @Bean
+  @ConditionalOnMissingBean
   GreetingService greetingService(){
     return new GreetingServiceImpl();
   }

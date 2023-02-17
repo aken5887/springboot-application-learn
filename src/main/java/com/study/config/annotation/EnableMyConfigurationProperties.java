@@ -1,6 +1,6 @@
 package com.study.config.annotation;
 
-import com.study.config.MyAutoConfigImportSelector;
+import com.study.config.MyConfigurationPropertiesImportSelector;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Import;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-//@Import({DispatcherServlet.class, TomcatWebServerConfig.class})
-@Import(MyAutoConfigImportSelector.class)
-public @interface EnableMyAutoConfiguration {
+@Import(MyConfigurationPropertiesImportSelector.class)
+public @interface EnableMyConfigurationProperties {
+  Class<?> value();
 }

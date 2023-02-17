@@ -1,2 +1,4 @@
-com.study.config.DispatcherServletConfig
-com.study.config.TomcatWebServerConfig
+com.study.config.autoconfig.PropertySourcesPlaceholderConfig
+com.study.config.autoconfig.TomcatWebServerConfig
+com.study.config.autoconfig.DispatcherServletConfig
+com.study.config.autoconfig.PropertyPostProcessConfig

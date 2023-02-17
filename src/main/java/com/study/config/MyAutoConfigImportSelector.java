@@ -22,7 +22,7 @@ public class MyAutoConfigImportSelector implements DeferredImportSelector {
   public String[] selectImports(AnnotationMetadata importingClassMetadata) {
     List<String> autoConfigs = new ArrayList<>();
     ImportCandidates.load(MyAutoConfiguration.class, classLoader).forEach(config -> {
-      logger.debug("loaded Config => {}", config);
+      logger.info("loaded Config => {}", config);
       autoConfigs.add(config);
     });
     return autoConfigs.toArray(new String[0]);
